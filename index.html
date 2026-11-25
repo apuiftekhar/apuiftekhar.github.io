@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Iftekhar Hossain</title>
+<meta name="description" content="Iftekhar Hossain, Ph.D. student in Finance at the University of North Texas. Corporate finance, capital structure, corporate governance, emerging markets.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* VOICE formal academic homepage, calm and precise, in the spirit of the reference site
+   IDEA a journal title page: masthead, author block, then the paper list
+   PICTURE the author block: portrait (monogram until a photo is added) beside name, affiliation and bio
+   COLOUR white ground, deep navy masthead and ink, one muted gold rule; night is navy ground with white ink
+   TYPE Source Serif 4 for names and headings + Inter for text
+   LAYOUT laptop: portrait left, author block right; phone: portrait, name, bio, buttons stacked */
+:root{color-scheme:light dark;--bg:light-dark(#ffffff,#0c1426);--ink:light-dark(#17202e,#e7ecf5);--soft:light-dark(#4b5567,#aab4c6);--navy:light-dark(#1c3263,#9fb6ea);--bar:#14254a;--panel:light-dark(#f5f7fb,#121d35);--line:light-dark(#e1e6ef,#24314d);--gold:#c9a24a}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 Inter,system-ui,sans-serif;overflow-x:clip}
+a{color:var(--navy)}
+img{max-width:100%}
+h1,h2,h3{font-family:"Source Serif 4",Georgia,serif;color:var(--navy);line-height:1.15;letter-spacing:-.01em;margin:0}
+.wrap{max-width:1080px;margin:0 auto;padding-left:max(4vw,16px);padding-right:max(4vw,16px)}
+header{position:sticky;top:0;z-index:5;background:var(--bar);color:#fff;box-shadow:0 1px 0 rgba(0,0,0,.2)}
+.nav{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:6px 24px;min-height:60px;padding-block:8px}
+.brand{font:600 20px "Source Serif 4",Georgia,serif;color:#fff;text-decoration:none;border-left:3px solid var(--gold);padding-left:12px}
+.nav ul{display:flex;flex-wrap:wrap;gap:2px 22px;list-style:none;margin:0;padding:0}
+.nav ul a{color:#dfe6f5;text-decoration:none;font-size:14px;font-weight:500;padding:6px 0;display:inline-block}
+.nav ul a:hover,.nav ul a:focus-visible{color:#fff;box-shadow:inset 0 -2px 0 var(--gold)}
+section{padding-block:clamp(36px,5vw,64px);border-bottom:1px solid var(--line)}
+section:last-of-type{border-bottom:0}
+h2{font-size:clamp(28px,3.4vw,36px);margin-bottom:28px;display:inline-block;padding-bottom:6px;border-bottom:3px solid var(--navy)}
+.hero{display:grid;grid-template-columns:240px minmax(0,1fr);gap:clamp(24px,4vw,48px);align-items:start}
+.photo{aspect-ratio:4/5;border-radius:6px;background:linear-gradient(160deg,#25407a,#122149);display:grid;place-items:center;box-shadow:0 10px 24px rgba(16,32,70,.18);overflow:hidden}
+.photo span{font:600 64px "Source Serif 4",Georgia,serif;color:#fff;letter-spacing:.02em}
+.photo img{width:100%;height:100%;object-fit:cover}
+.hero h1{font-size:clamp(34px,4.6vw,48px)}
+.role{font-family:"Source Serif 4",Georgia,serif;font-style:italic;font-size:19px;color:var(--soft);margin:8px 0 2px}
+.aff{color:var(--soft);font-size:15px;margin:0 0 18px}
+.bio p{margin:0 0 14px;max-width:66ch}
+.meta{display:flex;flex-wrap:wrap;gap:6px 26px;font-size:15px;color:var(--soft);margin:18px 0 20px}
+.btns{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 18px;border-radius:4px;border:1px solid var(--navy);font:500 15px Inter,sans-serif;text-decoration:none;color:var(--navy);background:transparent;cursor:pointer}
+.btn.solid{background:var(--bar);border-color:var(--bar);color:#fff}
+.btn:hover{filter:brightness(1.12)}
+.btn:focus-visible,.nav a:focus-visible,input:focus-visible,textarea:focus-visible,summary:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.btn svg{width:16px;height:16px;flex:none}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.tags span{font-size:14px;padding:5px 12px;border-radius:999px;background:var(--panel);border:1px solid var(--line)}
+h3.sub{font-size:22px;margin:8px 0 16px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:22px 26px;margin-bottom:16px}
+.card h3{font-size:21px;margin-bottom:6px}
+.card .by{color:var(--soft);font-size:15px;margin:0 0 4px}
+.card .src{font-size:15px;margin:0}
+.card .src i{font-family:"Source Serif 4",Georgia,serif;font-size:16px}
+.card p.desc{margin:12px 0 0;max-width:72ch}
+.links{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.links a{font-size:14px;padding:6px 12px;border:1px solid var(--line);border-radius:4px;text-decoration:none;background:var(--bg)}
+.status{display:inline-block;font-size:13px;font-weight:600;color:var(--navy);background:color-mix(in srgb,var(--navy) 12%,transparent);padding:2px 10px;border-radius:999px;margin-bottom:8px}
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.grid2 .card{margin:0}
+.tl{list-style:none;margin:0;padding:0}
+.tl li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 24px;padding:18px 0;border-top:1px solid var(--line)}
+.tl li:first-child{border-top:0;padding-top:0}
+.tl b{font-family:"Source Serif 4",Georgia,serif;font-size:19px;color:var(--navy);font-weight:600}
+.tl .when{color:var(--soft);font-size:14px;white-space:nowrap;text-align:right}
+.tl .where{color:var(--soft);font-size:15px;grid-column:1/-1;margin-top:-2px}
+.tl ul{grid-column:1/-1;margin:6px 0 0;padding-left:20px}
+.tl ul li{display:list-item;border:0;padding:2px 0}
+.honors{list-style:none;padding:0;margin:0;display:grid;gap:12px}
+.honors li{display:grid;grid-template-columns:auto minmax(0,1fr);gap:16px;align-items:baseline}
+.honors .yr{font:600 15px "Source Serif 4",Georgia,serif;color:var(--navy);min-width:3.4em}
+.contact{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(24px,4vw,48px)}
+.crow{display:flex;gap:14px;align-items:flex-start;margin:16px 0}
+.ic{width:38px;height:38px;flex:none;border-radius:50%;background:var(--panel);border:1px solid var(--line);display:grid;place-items:center;color:var(--navy)}
+.ic svg{width:18px;height:18px}
+.crow small{display:block;color:var(--soft);font-size:13px}
+.social{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.social a{min-height:44px;padding:0 16px;border-radius:999px;background:var(--bar);color:#fff;display:inline-flex;align-items:center;font-size:14px;font-weight:600;text-decoration:none}
+form{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:24px}
+.row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+label{display:block;font-size:14px;font-weight:600;color:var(--navy);margin:0 0 14px}
+input,textarea{display:block;width:100%;margin-top:6px;font:16px Inter,sans-serif;padding:10px 12px;border:1px solid var(--line);border-radius:4px;background:var(--bg);color:var(--ink)}
+textarea{min-height:130px;resize:vertical}
+.note{font-size:14px;color:var(--soft);margin:12px 0 0}
+footer{background:var(--bar);color:#cdd6ea;font-size:14px;text-align:center;padding:24px 16px}
+footer a{color:#fff}
+.rhead{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px 24px;margin:-8px 0 22px}
+.rintro{margin:0;color:var(--soft);max-width:60ch}
+.filt{display:flex;flex-wrap:wrap;gap:6px}
+.filt button{min-height:40px;padding:0 14px;border-radius:999px;border:1px solid var(--line);background:var(--bg);color:var(--ink);font:500 14px Inter,sans-serif;cursor:pointer}
+.filt button.on{background:var(--bar);border-color:var(--bar);color:#fff}
+.paper{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:26px 30px;margin-bottom:20px;transition:box-shadow .2s}
+.paper:hover{box-shadow:0 8px 24px rgba(16,32,70,.08)}
+.paper[hidden]{display:none}
+.ptop{display:flex;justify-content:space-between;align-items:flex-start;gap:16px}
+.paper h3{font-size:22px}
+.flag{flex:none;font-size:12px;font-weight:600;color:#fff;background:#a8343c;padding:4px 10px;border-radius:3px;white-space:nowrap}
+.paper .by{margin:8px 0 0;font-size:15px;color:var(--soft)}
+.paper .by i{font-family:"Source Serif 4",Georgia,serif}
+.viz{margin:18px 0 0;background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:18px 20px 20px}
+.viz figcaption{text-align:center;font-size:13px;font-style:italic;color:var(--soft);margin-bottom:16px}
+.flow{display:flex;align-items:stretch;justify-content:center}
+.node{flex:1 1 0;max-width:220px;border:1px solid var(--line);border-top:3px solid var(--navy);border-radius:4px;padding:12px;text-align:center;background:var(--panel)}
+.node b{display:block;font-size:15px;color:var(--navy)}
+.node span{display:block;font-size:13px;color:var(--soft);margin-top:4px;line-height:1.4}
+.node.hub{border-top-color:var(--gold)}
+.node.out{border-top-color:#a8343c}
+.arrow{flex:0 0 44px;display:grid;place-items:center}
+.arrow i{display:block;width:30px;height:2px;background:var(--navy);position:relative}
+.arrow i::after{content:"";position:absolute;right:-1px;top:-4px;border:5px solid transparent;border-left:7px solid var(--navy);border-right:0}
+.ctrls{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;margin-top:14px;font-size:13px;color:var(--soft);align-items:center}
+.ctrls em{font-style:normal;border:1px dashed var(--line);border-radius:999px;padding:2px 10px}
+.dirs{list-style:none;margin:16px 0 0;padding:0;display:grid;gap:8px}
+.dirs li{display:flex;align-items:center;gap:12px;font-size:15px}
+.dirs span{flex:none;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font-weight:700;color:#fff}
+.dirs .up{background:#2f6b4a}.dirs .dn{background:#a8343c}.dirs .eq{background:var(--navy)}
+.dirs.big{margin:0}.dirs.big li{padding:12px;border:1px solid var(--line);border-radius:6px;background:var(--panel)}
+.dirs.big span{width:40px;height:40px;font-size:20px}
+.dirs.big b{display:block;font-size:16px;color:var(--navy)}.dirs.big small{font-size:14px;color:var(--soft)}
+.facts{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.facts span{font-size:14px;padding:4px 12px;border-radius:999px;background:var(--bg);border:1px solid var(--line)}
+.facts b{color:var(--navy);font-family:"Source Serif 4",Georgia,serif;font-size:16px}
+.dirs li>div{flex:1}
+.sig{flex:none;font-style:normal;font-size:13px;font-weight:600;padding:3px 10px;border-radius:999px;background:#2f6b4a;color:#fff;white-space:nowrap}
+.sig.ns{background:transparent;color:var(--soft);border:1px solid var(--line)}
+.legend{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:6px 10px;font-size:13px;color:var(--soft);margin:-6px 0 14px}
+.k{display:inline-block;width:12px;height:12px;border-radius:2px;margin-left:8px}
+.k.pre,.bar.pre{background:color-mix(in srgb,var(--soft) 45%,transparent)}
+.k.post,.bar.post{background:var(--navy)}
+.ba{display:grid;grid-template-columns:9.5em minmax(0,1fr) 4.5em;gap:12px;align-items:center;padding:8px 0;border-top:1px solid var(--line)}
+.ba:first-of-type{border-top:0}
+.bl{font-size:14px;font-weight:500}
+.bars{display:grid;gap:4px}
+.bar{height:20px;border-radius:2px;width:var(--w);min-width:2px;position:relative}
+.bar em{position:absolute;left:calc(100% + 8px);top:50%;transform:translateY(-50%);font-style:normal;font-size:13px;color:var(--ink);white-space:nowrap}
+.chg{text-align:right;font-size:15px;color:#2f6b4a;white-space:nowrap;font-variant-numeric:tabular-nums}
+.bars{padding-right:5.5em}
+.anim .bar{width:0}
+.go .bar{width:var(--w);transition:width .9s ease;transition-delay:calc(var(--i,0)*90ms)}
+@media(max-width:600px){.ba{grid-template-columns:minmax(0,1fr) auto}.bl{grid-column:1/-1}.bars{padding-right:5em}}
+@media(prefers-reduced-motion:reduce){.anim .bar{width:var(--w);transition:none}}
+.acts{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.acts a,.acts button{min-height:40px;display:inline-flex;align-items:center;gap:6px;padding:0 14px;border:1px solid var(--line);border-radius:4px;background:var(--bg);color:var(--navy);font:500 14px Inter,sans-serif;text-decoration:none;cursor:pointer}
+.acts a:hover,.acts button:hover{border-color:var(--navy)}
+.tog[aria-expanded=true] span{display:inline-block;transform:rotate(180deg)}
+.abs{margin-top:14px;padding:14px 18px;border-left:3px solid var(--gold);background:var(--bg);border-radius:0 4px 4px 0}
+.abs p{margin:0;max-width:75ch}
+.anim .node,.anim .dirs li,.anim .ctrls{opacity:0;transform:translateY(10px)}
+.anim .arrow i{transform:scaleX(0);transform-origin:left}
+.go .node,.go .dirs li,.go .ctrls{opacity:1;transform:none;transition:opacity .5s ease,transform .5s ease;transition-delay:calc(var(--i,0)*120ms)}
+.go .arrow i{transform:scaleX(1);transition:transform .45s ease;transition-delay:calc(var(--i,0)*120ms)}
+@media(max-width:700px){.flow{flex-direction:column;align-items:center}.node{max-width:none;width:100%}.arrow{flex-basis:30px}.arrow i{width:2px;height:20px}.arrow i::after{right:-4px;top:auto;bottom:-1px;border:5px solid transparent;border-top:7px solid var(--navy);border-bottom:0}.anim .arrow i{transform:scaleY(0);transform-origin:top}.go .arrow i{transform:scaleY(1)}.paper{padding:20px}.ptop{flex-direction:column;gap:8px}}
+@media(prefers-reduced-motion:reduce){.anim .node,.anim .dirs li,.anim .ctrls,.anim .arrow i{opacity:1;transform:none;transition:none}}
+@media(max-width:760px){.hero{grid-template-columns:minmax(0,1fr)}.photo{width:180px}.contact,.grid2{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:600px){.nav{justify-content:flex-start}.nav ul{gap:0 16px}.row{grid-template-columns:minmax(0,1fr)}.tl li{grid-template-columns:minmax(0,1fr)}.tl .when{text-align:left}.card{padding:18px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header>
+  <nav class="wrap nav" aria-label="Main">
+    <a class="brand" href="#home">Iftekhar Hossain</a>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#teaching">Teaching</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#honors">Honors</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+<section id="home">
+  <div class="wrap hero">
+    <div class="photo"><img src="photo.jpg" alt="Iftekhar Hossain"></div>
+    <div>
+      <h1>Iftekhar Hossain</h1>
+      <p class="role">Doctoral Student in Finance</p>
+      <p class="aff">Department of Finance, Insurance, Real Estate, and Law · G. Brint Ryan College of Business · University of North Texas</p>
+      <div class="bio">
+        <p>I study corporate finance, capital structure, and corporate governance, with additional interests in how political exposure and regulatory pressure shape financing decisions, financial intermediation, and emerging-markets finance.</p>
+        <p>Before starting my Ph.D., I served four years as an officer in the Finance Branch of the Bangladesh Air Force, where I managed budgets and payroll, worked on asset valuation and accident-loss assessment, and taught Corporate Finance, Statistics, and Econometrics at the Bangladesh Air Force Academy. I hold a BBA and an MBA in Finance from the University of Dhaka, finishing in the top 1% of my class in both.</p>
+      </div>
+      <div class="meta">
+        <span>iftekhar.hossain@unt.edu</span>
+        <span style="white-space:nowrap">+1 (682) 408-2432</span>
+        <span>Denton, TX</span>
+      </div>
+      <div class="btns">
+        <a class="btn solid" href="cv.pdf"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0-5-5m5 5 5-5M4 21h16"/></svg>Download CV</a>
+        <a class="btn" href="https://scholar.google.com/citations?user=LvoiTGIAAAAJ&amp;hl=en">Google Scholar</a>
+        <a class="btn" href="#contact">Contact</a>
+      </div>
+      <div class="tags" aria-label="Research interests">
+        <span>Corporate Finance</span><span>Capital Structure</span><span>Corporate Governance</span><span>Risk Management</span><span>Financial Intermediation</span><span>Emerging Markets</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="research">
+  <div class="wrap">
+    <h2>Research</h2>
+
+    <div class="rhead">
+      <p class="rintro">Three published articles. Each card shows the paper's design or main result; open the summary for details or copy the citation.</p>
+      <div class="filt" role="group" aria-label="Filter papers">
+        <button type="button" class="on" data-f="all">All</button>
+        <button type="button" data-f="cf">Corporate finance</button>
+        <button type="button" data-f="fintech">Fintech &amp; AI</button>
+      </div>
+    </div>
+
+    <article class="paper" data-t="cf">
+      <div class="ptop"><h3>Nexus between Dividend Policy and Stock Price Volatility: Evidence from Dhaka Stock Exchange</h3><span class="flag">MBA thesis</span></div>
+      <p class="by">with N. Khan and N. T. Simran · <i>Journal of Finance and Banking</i>, 20(1–2), 135–152, 2023</p>
+      <p class="desc">Do firms that pay out more in dividends have less volatile share prices? Using 75 dividend-paying, non-financial firms on the Dhaka Stock Exchange (2012–2018) and fixed-effects panel regressions, we find that dividend payout has no significant effect on price volatility; earnings volatility and firm size drive it.</p>
+      <div class="facts"><span><b>75</b> firms</span><span><b>7</b> industries</span><span><b>2012–2018</b></span><span>Firm &amp; year fixed effects</span><span>Robust SE, lagged payout</span></div>
+      <figure class="viz">
+        <figcaption>What drives stock price volatility? Preferred model: firm and year fixed effects, robust standard errors</figcaption>
+        <ul class="dirs big">
+          <li><span class="eq">○</span><div><b>Dividend payout → Price volatility</b><small>Not significant (coef. −0.0065); only weakly positive at 10% when lagged</small></div><em class="sig ns">n.s.</em></li>
+          <li><span class="up">↑</span><div><b>Earnings volatility → Price volatility</b><small>More erratic earnings, more volatile prices (coef. 0.0012)</small></div><em class="sig">p = 0.01</em></li>
+          <li><span class="up">↑</span><div><b>Firm size → Price volatility</b><small>Larger firms more volatile, unlike most prior studies (coef. 0.1164)</small></div><em class="sig">p &lt; 0.01</em></li>
+          <li><span class="eq">○</span><div><b>Long-term debt, asset growth</b><small>No significant effect once year effects are included</small></div><em class="sig ns">n.s.</em></li>
+        </ul>
+      </figure>
+      <div class="acts">
+        <a href="https://doi.org/10.61607/JFB.V20N1-2.A7">Read paper</a>
+        <button type="button" class="tog" aria-expanded="false">Abstract <span aria-hidden="true">▾</span></button>
+        <button type="button" class="cite" data-c="Khan, N., Hossain, I., &amp; Simran, N. T. (2023). Nexus between dividend policy and stock price volatility: Evidence from Dhaka Stock Exchange. Journal of Finance and Banking, 20(1–2), 135–152. https://doi.org/10.61607/JFB.V20N1-2.A7">Copy citation</button>
+      </div>
+      <div class="abs" hidden><p>The study investigates whether dividend policy is a major predictor of stock price volatility for the firms listed on the Dhaka Stock Exchange excluding the financial institutions. The research has been conducted with the Dividend Payout Ratio serving as the explanatory variable and Earnings Volatility, Long-term Debt, Firm Size and Asset Growth serving as the control variables. Panel regression analysis has been used while conducting the analysis. The model with the ordinary standard error does not fit well, suggesting that the significant variable is long-term debt. However, after integrating time-fixed variables it is found that firm size is significantly linked with stock price volatility. In addition, the model with robust standard error and no time-fixed effect implies that dividend payout, earnings volatility and long-term debt are significant, whereas the model with time-fixed effect suggests that earnings volatility and firm size are significant. To account for endogeneity, lags are introduced in the model. Changes in the significance of explanatory and control variables are rarely noticeable with lags being introduced in the models. The output of the model with robust standard error and time-fixed effect is comparable to that of the model with no lag. Finally, tests are conducted to account for heteroscedasticity and time-fixed effect. The results of the tests indicate that the data is heteroscedastic, necessitating the use of temporal fixed effects in fixed effects panel regression. Some of the models incorporated robust standard error to correct for heteroscedasticity and a year dummy to account for the time-fixed effect.</p></div>
+    </article>
+
+    <article class="paper" data-t="fintech">
+      <div class="ptop"><h3>Risk Assessment in Financial Services: Advancing Transparency and Trust through Explainable AI Models</h3><span class="flag">Lead author</span></div>
+      <p class="by">with R. Ahmad, M. R. Amin, N. Sultana, and S. Chowdhury · <i>International Journal of Science and Research Archive</i>, 16(1), 1409–1419, 2025</p>
+      <p class="desc">Machine-learning credit and fraud models predict well but act as black boxes. We show how model-agnostic explanation methods such as SHAP and permutation feature importance turn their outputs into reasons that risk managers, regulators, and customers can check, and weigh this against predictive performance.</p>
+      <div class="facts"><span>Credit scoring</span><span>Fraud detection</span><span>Gradient boosting &amp; deep learning</span><span>SHAP · permutation importance</span></div>
+      <figure class="viz">
+        <figcaption>Where explainability sits in the risk pipeline</figcaption>
+        <div class="flow">
+          <div class="node"><b>Financial data</b><span>Credit applications<br>transaction records</span></div>
+          <div class="arrow" aria-hidden="true"><i></i></div>
+          <div class="node"><b>Black-box model</b><span>Gradient boosting<br>deep learning</span></div>
+          <div class="arrow" aria-hidden="true"><i></i></div>
+          <div class="node hub"><b>Explainable AI layer</b><span>SHAP values<br>permutation importance</span></div>
+          <div class="arrow" aria-hidden="true"><i></i></div>
+          <div class="node out"><b>Stakeholders</b><span>Risk managers · regulators<br>customers</span></div>
+        </div>
+        <ul class="dirs">
+          <li><span class="up">↑</span><div><b>Trust and accountability</b> in automated credit and fraud decisions</div></li>
+          <li><span class="up">↑</span><div><b>Regulatory compliance</b> (e.g. GDPR) and detection of model bias</div></li>
+          <li><span class="eq">⇄</span><div><b>Trade-off</b> between interpretability, accuracy, and data confidentiality remains</div></li>
+        </ul>
+      </figure>
+      <div class="acts">
+        <a href="https://doi.org/10.30574/ijsra.2025.16.1.2150">Read paper</a>
+        <button type="button" class="tog" aria-expanded="false">Abstract <span aria-hidden="true">▾</span></button>
+        <button type="button" class="cite" data-c="Hossain, I., Ahmad, R., Amin, M. R., Sultana, N., &amp; Chowdhury, S. (2025). Risk assessment in financial services: Advancing transparency and trust through explainable AI models. International Journal of Science and Research Archive, 16(1), 1409–1419. https://doi.org/10.30574/ijsra.2025.16.1.2150">Copy citation</button>
+      </div>
+      <div class="abs" hidden><p>This paper explores the integration of Explainable Artificial Intelligence (XAI) models in financial services to enhance transparency and foster trust in risk assessment processes. It investigates how XAI techniques can demystify complex AI-driven credit and fraud risk models, enabling stakeholders to better understand, validate, and trust automated decisions. By addressing the challenges of opacity and accountability inherent in AI systems, this study highlights the pivotal role of explainability in promoting ethical, fair, and reliable financial services. The findings underscore the potential of XAI to transform risk management by balancing predictive accuracy with interpretability, thereby advancing transparency and trust in the financial ecosystem.</p></div>
+    </article>
+
+    <article class="paper" data-t="fintech">
+      <div class="ptop"><h3>Smart Automation: Revolutionizing Business Operations, Advertising Costs and Customer Satisfaction Through Technology</h3></div>
+      <p class="by">with R. Haider, M. R. Amin, M. S. Arafat, and R. Ahmad · <i>European Economic Letters</i>, 16(1), 1816–1845, 2026</p>
+      <p class="desc">A field case study: we ran a small e-book business on Facebook message ads, then added a tracked website, a chatbot, and instant online payment. Automation cut the cost per message by 62.5%, more than doubled sales, and brought average response time down from over four hours to 18 minutes.</p>
+      <div class="facts"><span>Field case study</span><span>Facebook message ads</span><span>Chatbot + Meta Pixel tracking</span><span>Customer surveys before and after</span></div>
+      <figure class="viz">
+        <figcaption>Before vs. after automation (case study data from the paper)</figcaption>
+        <div class="legend"><span class="k pre"></span>Before automation<span class="k post"></span>After automation</div>
+          <div class="ba"><span class="bl">Cost per message</span><div class="bars"><div class="bar pre" style="--w:100.0%"><em>$0.08</em></div><div class="bar post" style="--w:37.5%"><em>$0.03</em></div></div><b class="chg">−62.5%</b></div>
+          <div class="ba"><span class="bl">Ad spend</span><div class="bars"><div class="bar pre" style="--w:100.0%"><em>$30.57</em></div><div class="bar post" style="--w:47.6%"><em>$14.55</em></div></div><b class="chg">−52.4%</b></div>
+          <div class="ba"><span class="bl">Sales</span><div class="bars"><div class="bar pre" style="--w:39.8%"><em>45</em></div><div class="bar post" style="--w:100.0%"><em>113</em></div></div><b class="chg">+151%</b></div>
+          <div class="ba"><span class="bl">Conversion rate</span><div class="bars"><div class="bar pre" style="--w:45.6%"><em>12.3%</em></div><div class="bar post" style="--w:100.0%"><em>27.0%</em></div></div><b class="chg">+2.2×</b></div>
+          <div class="ba"><span class="bl">Reach</span><div class="bars"><div class="bar pre" style="--w:64.1%"><em>11,776</em></div><div class="bar post" style="--w:100.0%"><em>18,365</em></div></div><b class="chg">+55.9%</b></div>
+          <div class="ba"><span class="bl">Avg. response time</span><div class="bars"><div class="bar pre" style="--w:100.0%"><em>4 h 12 min</em></div><div class="bar post" style="--w:7.1%"><em>18 min</em></div></div><b class="chg">−93%</b></div>
+      </figure>
+      <div class="acts">
+        <a href="https://doi.org/10.52783/eel.v16i1.4329">Read paper</a>
+        <button type="button" class="tog" aria-expanded="false">Abstract <span aria-hidden="true">▾</span></button>
+        <button type="button" class="cite" data-c="Haider, R., Amin, M. R., Arafat, M. S., Hossain, I., &amp; Ahmad, R. (2026). Smart automation: Revolutionizing business operations, advertising costs and customer satisfaction through technology. European Economic Letters, 16(1), 1816–1845. https://doi.org/10.52783/eel.v16i1.4329">Copy citation</button>
+      </div>
+      <div class="abs" hidden><p>The focus of this paper is on improving the costs of Facebook ad utilization as well as automating the customer communication process, better enabling customized support and also streamlining the process of interacting with customers. This represents a massive cost-savings to businesses in advertising costs as one-to-one customized customer experiences deepen engagement with, and satisfaction of, the customer. This research identifies the enabling impact of AI-powered automation and the ways in which centralized processes, economies of scale, and low-cost marketing approaches working through various applications and channels including digital advertising have restructured CRM and digitally mediated advertising activities in ways that maximize efficiency.</p></div>
+    </article>
+  </div>
+</section>
+
+<section id="teaching">
+  <div class="wrap">
+    <h2>Teaching</h2>
+    <div class="grid2">
+      <div class="card">
+        <h3>University of North Texas</h3>
+        <p class="by">Teaching Assistant · Fall 2026</p>
+        <p class="src"><b>FINA 5210 Investments</b> (graduate, online)</p>
+        <p class="desc">Grade homework and exams, hold weekly review sessions, and answer student questions on course material.</p>
+      </div>
+      <div class="card">
+        <h3>Bangladesh Air Force Academy</h3>
+        <p class="by">Instructor · 2023–2026</p>
+        <p class="src"><b>Corporate Finance · Statistics · Econometrics</b></p>
+        <p class="desc">Taught undergraduate and postgraduate courses to more than 300 cadets and supervised empirical research projects using Stata.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <h2>Experience &amp; Education</h2>
+    <div class="grid2" style="align-items:start">
+      <div>
+        <h3 class="sub">Experience</h3>
+        <ul class="tl">
+          <li><b>Graduate Research &amp; Teaching Assistant</b><span class="when">2026–present</span>
+            <span class="where">University of North Texas</span>
+            <ul><li>Hand-collected CEO pay ratio disclosures from SEC proxy filings (DEF 14A) for 5,700+ U.S. firms to build a firm-level research dataset.</li></ul></li>
+          <li><b>Officer, Finance Branch</b><span class="when">2022–2026</span>
+            <span class="where">Bangladesh Air Force · Flying Officer, then Flight Lieutenant</span>
+            <ul><li>Led a finance team managing about BDT 200 crore in budgets, payroll, and welfare funds.</li><li>Board of Inquiry member for an F-7 aircraft accident: asset-loss valuation, insurance liabilities, and civil property damage assessment.</li><li>Oversaw fund allocation for flood relief and crisis response.</li><li>Received a Letter of Appreciation for financial management.</li></ul></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="sub">Education</h3>
+        <ul class="tl">
+          <li><b>Ph.D. in Finance</b><span class="when">2026–present</span><span class="where">University of North Texas</span></li>
+          <li><b>M.B.A. in Finance</b><span class="when">2022</span><span class="where">University of Dhaka · top 1% of class</span></li>
+          <li><b>B.B.A. in Finance</b><span class="when">2019</span><span class="where">University of Dhaka · top 1% of class</span></li>
+        </ul>
+        <h3 class="sub" style="margin-top:28px">Methods &amp; Software</h3>
+        <p style="margin:0 0 8px">Panel data (FE, RE, Mundlak), dynamic panels (Arellano–Bond, system GMM), causal inference (IV/2SLS, DiD), time series (VAR, cointegration).</p>
+        <p style="margin:0">Stata (advanced), R, Excel, Python · WRDS (Compustat, CRSP)</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="honors">
+  <div class="wrap">
+    <h2>Honors &amp; Affiliations</h2>
+    <ul class="honors">
+      <li><span class="yr">2026</span><span>Fully funded Graduate Assistantship, Ph.D. in Finance, University of North Texas</span></li>
+      <li><span class="yr">2023</span><span>Course 1st, No. 16 Financial Management Course, Bangladesh Air Force</span></li>
+      <li><span class="yr">2019</span><span>Dean's Merit Award, Department of Finance, University of Dhaka (4.00 GPA in a semester)</span></li>
+      <li><span class="yr">—</span><span>Letter of Appreciation, Bangladesh Air Force</span></li>
+      <li><span class="yr">—</span><span>Member, American Finance Association and Financial Management Association</span></li>
+    </ul>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap contact">
+    <div>
+      <h2>Contact</h2>
+      <p style="margin:0;max-width:44ch">I welcome questions about my research, as well as collaboration and data inquiries.</p>
+      <div class="crow"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span><div><small>Email</small><a href="mailto:iftekhar.hossain@unt.edu">iftekhar.hossain@unt.edu</a></div></div>
+      <div class="crow"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span><div><small>Office</small>G. Brint Ryan College of Business<br>1155 Union Circle, Denton, TX 76203-5017</div></div>
+      <div class="crow"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2z"/></svg></span><div><small>Phone</small><a href="tel:+16824082432" style="white-space:nowrap">+1 (682) 408-2432</a></div></div>
+      <div class="social">
+        <a href="https://scholar.google.com/citations?user=LvoiTGIAAAAJ&amp;hl=en">Google Scholar</a>
+        <a href="https://www.linkedin.com/in/apuiftekhar">LinkedIn</a>
+        <a href="https://www.researchgate.net/profile/Iftekhar-Hossain-9">ResearchGate</a>
+        <a href="https://cob.unt.edu">UNT College of Business</a>
+      </div>
+    </div>
+    <form id="cform" novalidate>
+      <div class="row">
+        <label for="cname">Name<input id="cname" name="name" autocomplete="name" required></label>
+        <label for="cemail">Email<input id="cemail" name="email" type="email" autocomplete="email" required></label>
+      </div>
+      <label for="csubj">Subject<input id="csubj" name="subject"></label>
+      <label for="cmsg">Message<textarea id="cmsg" name="message" required></textarea></label>
+      <button class="btn solid" type="submit">Open in email</button>
+      <p class="note" id="cnote" aria-live="polite">This opens your email app with the message filled in. You can also write directly to iftekhar.hossain@unt.edu.</p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>© <span id="yr">2026</span> Iftekhar Hossain · G. Brint Ryan College of Business, University of North Texas · <a href="mailto:iftekhar.hossain@unt.edu">iftekhar.hossain@unt.edu</a></footer>
+
+<script>
+{
+  const vz=[...document.querySelectorAll('.viz')];
+  vz.forEach(v=>{[...v.querySelectorAll('.node,.arrow,.dirs li,.ctrls,.ba .bar')].forEach((el,i)=>el.style.setProperty('--i',i))});
+  if('IntersectionObserver' in window){
+    vz.forEach(v=>v.classList.add('anim'));
+    const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('go');io.unobserve(e.target)}}),{threshold:.25});
+    vz.forEach(v=>io.observe(v));
+  }
+  document.querySelectorAll('.tog').forEach(b=>b.addEventListener('click',()=>{
+    const a=b.closest('.paper').querySelector('.abs'),open=b.getAttribute('aria-expanded')==='true';
+    b.setAttribute('aria-expanded',String(!open));a.hidden=open;
+  }));
+  document.querySelectorAll('.cite').forEach(b=>b.addEventListener('click',async()=>{
+    const t=b.textContent;
+    try{await navigator.clipboard.writeText(b.dataset.c);b.textContent='Copied'}catch(e){b.textContent='Copy failed'}
+    setTimeout(()=>b.textContent=t,1600);
+  }));
+  const fb=[...document.querySelectorAll('.filt button')];
+  fb.forEach(b=>b.addEventListener('click',()=>{
+    fb.forEach(x=>x.classList.toggle('on',x===b));
+    document.querySelectorAll('.paper').forEach(p=>p.hidden=!(b.dataset.f==='all'||p.dataset.t===b.dataset.f));
+  }));
+  const f=document.getElementById('cform'),note=document.getElementById('cnote');
+  document.getElementById('yr').textContent=new Date().getFullYear();
+  f.addEventListener('submit',e=>{
+    e.preventDefault();
+    const n=f.name.value.trim(),em=f.email.value.trim(),m=f.message.value.trim();
+    if(!n||!em||!m){note.textContent='Please fill in your name, email, and message.';return}
+    const s=f.subject.value.trim()||'Message from your website';
+    const body=m+'\n\n'+n+' ('+em+')';
+    location.href='mailto:iftekhar.hossain@unt.edu?subject='+encodeURIComponent(s)+'&body='+encodeURIComponent(body);
+    note.textContent='If your email app did not open, please write to iftekhar.hossain@unt.edu.';
+  });
+}
+</script>
+</body>
+</html>
